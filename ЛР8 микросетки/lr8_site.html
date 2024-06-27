@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lr8_site.css">
+    <title>lr8_site</title>
+    <style>
+      .error {
+  color: red;
+  display: none; /* Сначала скрываем ошибки */
+  margin-top: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="t1"><h2>Войти в свой профиль</h2></div>
+        <div class="t2"><h2>Автор</h2></div>
+        <div class="t3"><h2>Регистрация</h2></div>
+        <div class="t4">Вход</div>
+        <div class="t5"></div>
+        <div class="t6"></div>
+        <div class="t7">Email</div>
+        <div class="t8"><input class="myInput" type="email" id="email" name="email" placeholder="Введите ваш email" required></div>
+        <div class="t9"></div>
+        <div class="t10">Пол</div>
+        <div class="t11"><input  type="radio" id="gender_male" name="gender" value="male" required>
+            <label for="gender_male">мужской</label>
+            
+            <input type="radio" id="gender_female" name="gender" value="female" required>
+            <label for="gender_female">женский</label></div>
+        <div class="t12"></div>
+        <div class="t13">Пароль</div>
+        <div class="t14"><input class="myInput" type="password" id="password" name="password" placeholder="Введите пароль" required></div>
+        <div class="t15"></div>
+        <div class="t16">ФИО</div>
+        <div class="t17"><input class="myInput" type="text" id="fullname" name="fullname" placeholder="Введите ФИО" required></div>
+        <div class="t18"><span class="clickable-text">Забыли пароль?</span></div>
+        <div class="t19"><input type="checkbox" class="myCheckbox" id="want" name="want" value="yes">
+            <label for="want">Запомнить</label></div>
+        <div class="t20"><button type="submit" class="myButton">Войти</button></div>
+        <div class="t21">Email</div>
+        <div class="t22"><input class="myInput" type="email" id="email" name="email" placeholder="Введите ваш email" required></div>
+        <div class="t23">Повторить Email</div>
+        <div class="t24"><input class="myInput" type="email" id="repeatEmail" name="repeatEmail" placeholder="Повторите ваш email" required></div>
+        <div class="t25">Пароль</div>
+        <div class="t26"><input class="myInput" type="password" id="password" name="password" placeholder="Введите пароль" required></div>
+        <div class="t27">Повторить пароль</div>
+        <div class="t28"><input class="myInput" type="password" id="repeatPassword" name="repeatPassword" placeholder="Повторите пароль" required></div>
+        
+
+        <script>
+         const form = document.getElementById("myForm");
+const fullnameInput = document.getElementById("fullname");
+const emailInput = document.getElementById("email");
+const repeatEmailInput = document.getElementById("repeatEmail");
+const passwordInput = document.getElementById("password");
+const repeatPasswordInput = document.getElementById("repeatPassword");
+const submitBtn = document.getElementById("submitBtn");
+
+// Функция проверки поля на пустоту
+function isEmpty(field) {
+  return field.value.trim() === "";
+}
+
+// Функция проверки формата Email
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); 
+}
+
+// Функция проверки совпадения паролей
+function passwordsMatch(password, repeatPassword) {
+  return password === repeatPassword;
+}
+
+// Обработчик события для отправки формы
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Предотвратить стандартную отправку формы
+
+  // Валидация ФИО
+  if (isEmpty(fullnameInput)) {
+    showError(fullnameInput, "Пожалуйста, введите ваше ФИО.");
+  } else {
+    hideError(fullnameInput);
+  }
+
+  // Валидация Email
+  if (isEmpty(emailInput)) {
+    showError(emailInput, "Пожалуйста, введите ваш email.");
+  } else if (!isValidEmail(emailInput.value)) {
+    showError(emailInput, "Некорректный формат email.");
+  } else {
+    hideError(emailInput);
+  }
+
+  // Валидация повторного Email
+  if (isEmpty(repeatEmailInput)) {
+    showError(repeatEmailInput, "Пожалуйста, повторите ваш email.");
+  } else if (!isValidEmail(repeatEmailInput.value)) {
+    showError(repeatEmailInput, "Некорректный формат email.");
+  } else if (repeatEmailInput.value !== emailInput.value) {
+    showError(repeatEmailInput, "Emails не совпадают.");
+  } else {
+    hideError(repeatEmailInput);
+  }
+
+  // Валидация пароля
+  if (isEmpty(passwordInput)) {
+    showError(passwordInput, "Пожалуйста, введите пароль.");
+  } else {
+    hideError(passwordInput);
+  }
+
+  // Валидация повторного пароля
+  if (isEmpty(repeatPasswordInput)) {
+    showError(repeatPasswordInput, "Пожалуйста, повторите пароль.");
+  } else if (!passwordsMatch(passwordInput.value, repeatPasswordInput.value)) {
+    showError(repeatPasswordInput, "Пароли не совпадают.");
+  } else {
+    hideError(repeatPasswordInput);
+  }
+
+  // Если все поля валидны, то отправляем форму (например, на сервер)
+  if (form.checkValidity()) {
+    // Здесь отправьте форму на сервер
+    console.log("Форма отправлена!"); 
+  }
+});
+
+// Функция для показа ошибки
+function showError(field, message) {
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error";
+  errorDiv.textContent = message;
+  field.parentNode.insertBefore(errorDiv, field.nextSibling); 
+}
+
+// Функция для скрытия ошибки
+function hideError(field) {
+  const errorDiv = field.parentNode.querySelector(".error");
+  if (errorDiv) {
+    errorDiv.remove();
+  }
+}
+      </script>
+
+
+
+
+        <div class="t29">Дата рождения</div>
+        <div class="t30"><select class="select" id="birth" name="birth" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select></div>
+        <div class="t31">
+            <select class="select" id="birth_month" name="birth_month" required>
+              <option value="1">Январь</option>
+              <option value="2">Февраль</option>
+            </select></div>
+        <div class="t32"><select id="birthyear" class="select" name="birthyear" required>
+            <option value="1">2000</option>
+            <option value="2">2001</option>
+          </select></div>
+        <div class="t33"><input type="checkbox" class="myCheckbox" id="want" name="want" value="yes">
+            <label for="want">Я хочу получать сообщения и предложения</label></div>
+        <div class="t34"><input type="checkbox"class="myCheckbox" id="want" name="want" value="yes">
+            <label for="want">Я принимаю условия использования</label></div>
+            <div class="t35"><button type="submit" class="myButton" id="submitBtn">Отправить</button></div>
+        <div class="t36"><button type="submit" class="myButton">Продолжить без регистрации</button></div>
+        <div class="pusto"></div>
+        <div class="pusto1"></div>
+        <div class="pusto2"></div>
+        <div class="pusto3"></div>
+        <div class="pusto4"></div>
+        <div class="pusto5"></div>
+      </div>
+
+      <div class="container-2">
+        <div class="m1"><h2 style="text-align: start;">Вращающаяся Фоторамка куб 3D</h2></div>
+        <div class="m2"><span class="favorite-heart" onclick="addToFavorites()">❤</span></div>
+        <div class="m3"></div>
+        <div class="m4"></div>
+        <div class="m5">Есть в наличии</div>
+        <div class="m6"><h2>39.90 руб.</h2></div>
+        <div class="m7"><table>
+            <tr>
+              <td>
+                <button>-</button>
+                <span class="gray-background">1</span>
+                <button>+</button>
+              </td>
+            </tr>
+          </table></div>
+        <div class="m8"><button style="background-color: red; color: white; border: none; height: 30px; width: 130px;">&#128722 В корзину</button></div>
+        <div class="m9"></div>
+        <div class="m10" style="color: gray; font-size: 12px;">Сумма: 39.90 руб.</div>
+        <div class="m11"><button style="background-color: white; color: red; border-color: red; height: 30px; width: 130px;">Купить в 1 клик</button></div>
+        <div class="m12"></div>
+        <div class="none"></div>
+        <div class="m14">Скидка</div>
+        <div class="m13">Кол-во</div>
+        <div class="m15">Цена</div>
+        <div class="m16">2</div>
+        <div class="m17">10%</div>
+        <div class="m18">35.91 р</div>
+        <div class="m19">3</div>
+        <div class="m20">12%</div>
+        <div class="m21">35.11 р</div>
+        <div class="m22">4</div>
+        <div class="m23">13%</div>
+        <div class="m24">34.71 р</div>
+        <div class="m25">>5</div>
+        <div class="m26">15%</div>
+        <div class="m27">33.92 р</div>
+        <div class="m28"><img src="ph2.jpg" alt="Description of the image"></div>
+        <div class="m29"><img src="ph3.jpg" alt="Description of the image"></div>
+        <div class="m30"><button style="background-color: white; color: red; border-color: red; height: 30px; width: 160px;">Нашли дешевле?</button></div>
+        <div class="m31" style="font-size: 12px; text-align: start;">Доставка по Минску
+            Курьером - сегодня, стоимость : 5 руб. 
+            Самовывоз из наших магазинов 
+            в Минске — сегодня, бесплатно.
+            О доставке по Беларуси </div>
+        <div class="none2"></div>
+        <div class="pic" style="height: min-content;"><img src="phot.jpg" alt="Description of the image"></div>
+        <div class="none3"></div>
+        <div class="none4"></div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lr10-12</title>
+    <script>
+        function showSeconds() {
+            let currentDate = new Date();
+            let seconds = currentDate.getSeconds();
+            alert("Текущее количество секунд: " + seconds);
+        }
+    </script>
+</head>
+<body>
+    
+    <h2>Нажмите кнопку, чтобы увидеть текущее количество секунд</h2>
+    <button onclick="showSeconds()">Показать время</button>
+
+    <h2>Скрипт с циклом</h2>
+    <script>
+        let count = 0;
+        do {
+            document.write("Фамилия: Касмина, Имя: Дарья <br>");
+            count++;
+        } while (count < 15);
+    </script>
+
+
+<h2>Массив</h2>
+
+<script>
+    // Создаем массив из 10 целых элементов
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+      numbers.push(Math.floor(Math.random() * 100)); // Случайные числа от 0 до 99
+    }
+
+    // Выводим исходный массив в HTML
+    document.write("Исходный массив: " + numbers + "<br>");
+
+    // Счетчик элементов, кратных 5
+    let count2 = 0;
+
+    // Заменяем элементы, кратные 5, на -10
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 5 === 0) {
+        numbers[i] = -10;
+        count2++;
+      }
+    }
+
+    // Выводим количество элементов, кратных 5 в HTML
+    document.write("Количество элементов, кратных 5: " + count2 + "<br>");
+
+    // Выводим измененный массив в HTML
+    document.write("Измененный массив: " + numbers + "<br>");
+  </script>
+
+
+<h2>Расчет по формуле</h2>
+
+<label for="inputA">Введите значение переменной a:</label>
+<input type="text" id="inputA"><br><br>
+
+<label for="inputB">Введите значение переменной b:</label>
+<input type="text" id="inputB"><br><br>
+
+<label for="inputC">Введите значение переменной c:</label>
+<input type="text" id="inputC"><br><br>
+
+<button onclick="calculateAndDisplayResult()">Рассчитать</button><br><br>
+
+
+<div id="output"></div>
+
+<script src="lr10-12.js"></script>
+
+<div id="output"></div>
+
+<br>
+<script>
+    // Создание строковых переменных s1 и s2
+    let s1 = "Я люблю Беларусь";
+    let s2 = "Я учусь в политехническом колледже";
+
+    // Определение длины строки s2
+    let s2Length = s2.length;
+
+    // Проверка наличия слова "Гомель" в строке s1
+    let containsGomel = s1.includes("Гомель");
+
+    // Выделение 10-го символа в строке s2 и определение его ASCII-кода
+    let charAtIndex10 = s2.charAt(9); // Индексация начинается с 0
+    let charCodeAt10 = s2.charCodeAt(9);
+
+    // Вывод результатов на страницу
+    document.getElementById("output").innerHTML = 
+        "<p>Длина строки s2: " + s2Length + "</p>" +
+        "<p>Содержит ли строка s1 слово 'Гомель': " + containsGomel + "</p>" +
+        "<p>10-й символ в строке s2: " + charAtIndex10 + "</p>" +
+        "<p>ASCII код 10-го символа в строке s2: " + charCodeAt10 + "</p>";
+</script>
+
+</body>
+</html>

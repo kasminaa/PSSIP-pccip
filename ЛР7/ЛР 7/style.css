@@ -1,0 +1,380 @@
+body, html {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+.container111 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); 
+  gap: 10px; 
+  height: 98vh;
+  text-align: center;
+}
+
+.full-width, .half-width, .eighth-width, .fourth-width {
+  display: grid;
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px;
+}
+
+.full-width {
+  grid-column: 1 / -1; 
+  background-color: rgb(255, 73, 73);
+  padding: 20px;
+  text-align: center;
+}
+
+.half-width {
+  grid-column: auto / span 3;
+  background-color: rgb(241, 193, 193);
+  text-align: center;
+}
+
+.ff{
+  margin-left: -50px;
+}
+
+.one{
+  grid-column: auto / span 12;
+  background-color: rgb(53, 123, 209);
+}
+
+.two {
+  grid-column: auto / span 2 ;
+  background-color: rgb(241, 193, 193);
+}
+
+.eighth-width {
+  grid-column: span 3; 
+  background-color: rgb(15, 212, 15);
+  padding: 20px;
+  text-align: center;
+}
+
+.fourth-width {
+  grid-column: span 6; 
+  background-color: rgb(207, 236, 207);
+  padding: 20px;
+  text-align: center;
+}  
+
+.two1 {
+  grid-column: auto / span 2 ;
+  background-color: rgb(241, 193, 193);
+}
+
+.two2 {
+  grid-column: auto / span 10 ;
+  background-color: rgb(241, 193, 193);
+}
+
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "t1 t1 t1 t1 t1 t1 t1 t1"
+    "t2 t2 t2 t2 t3 t3 t3 t3"
+    "t4 t4 t4 t4 t5 t5 t5 t5"
+    "t6 t6 t6 t6 t6 t6 t6 t6"
+    "t7 t8 t8 t9 t10 t11 t11 t12"
+    "t13 t14 t14 t15 t16 t17 t17 t17"
+    "pusto1 t18 t18 pusto2 t21 t22 t22 t22"
+    "pusto1 t19 t19 pusto2 t23 t24 t24 t24"
+    "pusto1 t20 pusto3 pusto2 t25 t26 t26 t26"
+    "pusto pusto pusto pusto t27 t28 t28 t28"
+    "pusto pusto pusto pusto t29 t30 t31 t32"
+    "pusto pusto pusto pusto t33 t33 t33 t33"
+    "pusto pusto pusto pusto t34 t34 t34 t34"
+    "pusto pusto pusto pusto pusto4 t35 t35 pusto5"
+    "t36 t36 t36 t36 t36 t36 t36 t36";
+    /* background-color: #a2a2a2; */
+    height: 100VH;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: azure;
+}
+.select {
+  background-color: rgb(255, 255, 255); /* Light grey background */
+  color: #333; /* Text color */
+  padding: 3px 10px;
+  font-size: 14px;
+  border: 1px solid rgb(203, 204, 204); /* Blue border */
+  border-radius: 5px;
+  cursor: pointer;
+}
+.clickable-text {
+  color: rgba(255, 0, 0, 0.8); /* Red color for the text */
+  text-decoration: underline; /* Underline the text */
+  cursor: pointer;
+}
+.t18, .t19, .t33, .t34, .t11, .t17, .t22, .t24, .t26, .t28, .t8, .t14 {
+  text-align: start;
+}
+.t10, .t7, .t13, .t16, .t21, .t23, .t25, .t27, .t29 { 
+text-align: end;
+}
+.myCheckbox {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(255, 0, 0, 0.8);
+  outline: none;
+}
+.myInput {
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.myCheckbox:checked {
+  background-color: rgba(255, 0, 0, 0.8);
+  content: '!';
+}
+.myButton {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 3px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.t1 { grid-area: t1; background-color: azure;}
+
+.t2 { grid-area: t2; background-color: azure;}
+
+.t3 { grid-area: t3; background-color: azure;}
+
+.t4 { grid-area: t4; background-color: azure;}
+
+.t5 { grid-area: t5; background-color: azure;}
+
+.t6 { grid-area: t6; background-color: azure;}
+
+.t7 { grid-area: t7; background-color: azure;}
+
+.t8 { grid-area: t8; background-color: azure;}
+
+.t9 { grid-area: t9; background-color: azure;}
+
+.t10 { grid-area: t10; background-color: azure;}
+
+.t11 { grid-area: t11; background-color: azure;}
+
+.t12 { grid-area: t12; background-color: azure;}
+
+.t13 { grid-area: t13; background-color: azure;}
+
+.t14 { grid-area: t14; background-color: azure;}
+
+.t15 { grid-area: t15; background-color: azure;}
+
+.t16 { grid-area: t16; background-color: azure; }
+
+.t17 { grid-area: t17; background-color: azure;}
+
+.t18 { grid-area: t18; background-color: azure;}
+
+.t19 { grid-area: t19; background-color: azure;}
+
+.t20 { grid-area: t20; background-color: azure;}
+
+.t21 { grid-area: t21; background-color: azure;}
+
+.t22 { grid-area: t22; background-color: azure;}
+
+.t23 { grid-area: t23; background-color: azure;}
+
+.t24 { grid-area: t24;background-color: azure; }
+
+.t25 { grid-area: t25; background-color: azure;}
+
+.t26 { grid-area: t26; background-color: azure;}
+
+.t27 { grid-area: t27; background-color: azure;}
+
+.t28 { grid-area: t28; background-color: azure;}
+
+.t29 { grid-area: t29; background-color: azure;}
+
+.t30 { grid-area: t30; background-color: azure;}
+
+.t31 { grid-area: t31; background-color: azure;}
+
+.t32 { grid-area: t32;background-color: azure; }
+
+.t33 { grid-area: t33; background-color: azure;}
+
+.t34 { grid-area: t34; background-color: azure;}
+
+.t35 { grid-area: t35; background-color: azure;}
+
+.t36 { grid-area: t36; background-color: azure;}
+
+.pusto { grid-area: pusto; background-color: azure;}
+
+.pusto1 { grid-area: pusto1; background-color: azure;}
+
+.pusto2 { grid-area: pusto2; background-color: azure;}
+
+.pusto3 { grid-area: pusto3; background-color: azure;}
+
+.pusto4 { grid-area: pusto4; background-color: azure;}
+
+.pusto5 { grid-area: pusto5; background-color: azure;}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width:800px){
+  .ff{
+    margin-left: 0;
+  }
+
+  .eighth-width{
+    font-size: 13px;
+  }
+
+  img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .container{ 
+    font-size: 11px;
+  }
+  .half-width {
+    grid-column: auto / span 6;
+    background-color: rgb(241, 193, 193);
+    text-align: center;
+  }
+
+  .one{
+    grid-column: auto / span 12;
+    background-color: rgb(53, 123, 209);
+  }
+  
+  .two {
+    grid-column: auto / span 4;
+    background-color: rgb(241, 193, 193);
+  }
+
+  .eighth-width {
+    grid-column: span 6; 
+    background-color: rgb(15, 212, 15);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .fourth-width {
+    grid-column: span 4; 
+    background-color: rgb(207, 236, 207);
+    padding: 20px;
+    text-align: center;
+  }  
+
+  .two1 {
+    grid-column: auto / span 4 ;
+    background-color: rgb(241, 193, 193);
+  }
+  
+  .two2 {
+    grid-column: auto / span 8 ;
+    background-color: rgb(241, 193, 193);
+    font-size: 12px;
+  }
+
+  .myInput {
+    width: 60%;
+    height: 10px;
+    padding: 5px;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 5px;
+    font-size: 12px;
+    outline: none;
+  }
+  
+}
+
+@media (max-width:500px){
+  .ff{
+    margin-left: 0;
+  }
+  .eighth-width{
+    font-size: 11px;
+  }
+  .container{ 
+    font-size: 9px;
+  }
+  img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .half-width {
+    grid-column: auto / span 4;
+    background-color: rgb(241, 193, 193);
+    text-align: center;
+  }
+
+  .one{
+    grid-column: auto / span 12;
+    background-color: rgb(53, 123, 209);
+  }
+  
+  .two {
+    grid-column: auto / span 12;
+    background-color: rgb(241, 193, 193);
+  }
+
+  .eighth-width {
+    grid-column: span 12; 
+    background-color: rgb(15, 212, 15);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .fourth-width {
+    grid-column: span 12; 
+    background-color: rgb(207, 236, 207);
+    padding: 20px;
+    text-align: center;
+  }  
+
+  .two1 {
+    grid-column: auto / span 12 ;
+    background-color: rgb(241, 193, 193);
+  }
+  
+  .two2 {
+    grid-column: auto / span 12 ;
+    background-color: rgb(241, 193, 193);
+    font-size: 10px;
+  }
+
+  .t8{  
+      font-size: 10px;
+  }
+
+  .myInput {
+    width: 40%;
+    height: 7px;
+    padding: 2px;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 5px;
+    font-size: 8px;
+    outline: none;
+  }
+  
+}

@@ -1,0 +1,40 @@
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.1fr 1fr 1.1fr 1fr 1.1fr 1.6fr 0.6fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    text-align: center;
+    grid-template-areas:
+      "t1 t1 t1 t1 t1 t1 t1 t1 t1 t1 t1 t1"
+      "t2 t2 t3 t3 t4 t4 t5 t5 t6 t6 t7 t7"
+      "t8 t8 t8 t8 t8 t8 t8 t8 t8 t8 t8 t8"
+      "t9 t9 t9 t10 t10 t10 t11 t11 t11 t12 t12 t12"
+      "t13 t13 t13 t14 t14 t14 t14 t14 t14 t15 t15 t15"
+      "t16 t16 t16 t16 t16 t16 t16 t16 t16 t16 t16 t16"
+      "t17 t17 t17 t17 t17 t18 t18 t18 t18 t18 t18 t18"
+      "t19 t19 t19 t19 t19 t19 t19 t19 t19 t19 t19 t19";
+      background-color: rgb(141, 141, 141);
+      height: 100VH;
+      border: 2px solid black;
+  }
+  
+  .t2 { grid-area: t2; background-color: azure;}
+  .t3 { grid-area: t3; background-color: azure;}
+  .t4 { grid-area: t4; background-color: azure;}
+  .t5 { grid-area: t5; background-color: azure;}
+  .t6 { grid-area: t6; background-color: azure;}
+  .t1 { grid-area: t1; background-color: azure;}
+  .t7 { grid-area: t7; background-color: azure;}
+  .t8 { grid-area: t8; background-color: azure;}
+  .t9 { grid-area: t9; background-color: azure;}
+  .t10 { grid-area: t10; background-color: azure;}
+  .t11 { grid-area: t11; background-color: azure;}
+  .t12 { grid-area: t12; background-color: azure;}
+  .t13 { grid-area: t13; background-color: azure;}
+  .t15 { grid-area: t15; background-color: azure;}
+  .t14 { grid-area: t14; background-color: azure;}
+  .t16 { grid-area: t16; background-color: azure;}
+  .t17 { grid-area: t17; background-color: azure;}
+  .t18 { grid-area: t18; background-color: azure;}
+  .t19 { grid-area: t19; background-color: azure;}
+  

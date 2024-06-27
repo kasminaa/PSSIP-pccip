@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЛР 13-14</title>
+<style>
+    #element1 {
+        font-family: Arial;
+    }
+    .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #df7575;
+            color: white;
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+        }
+
+</style>
+</head>
+<body>
+<div id="fio">Касмина Дарья Дмитриевна</div> <br>
+<img src="cat.png" alt="Изображение" width="15%" height="15%">
+
+<p>Нажмите на текст ниже, чтобы добавить новый элемент:</p>
+<p id="element1">Элемент №1</p>
+
+<script>
+// 1. Вывести информацию о заголовке документа
+console.log(document.title);
+
+// 2. Полученную информацию вывести однократно через 2 секунды после запуска страницы
+setTimeout(function() {
+    console.log(document.title);
+}, 2000);
+
+// 3. Создать новый элемент (09.08.06) и вставить его после элемента №1 при щелчке по нему
+document.getElementById('element1').addEventListener('click', function() {
+    var newElement = document.createElement('p');
+    newElement.textContent = '09.08.06';
+    this.insertAdjacentElement('afterend', newElement);
+});
+</script>
+
+<p id="titleInfo">Заголовок документа: </p>
+
+<script>
+// Функция для вывода информации о заголовке документа через 2 секунды
+setTimeout(function() {
+    var title = document.title;
+    var titleInfo = document.getElementById('titleInfo');
+    titleInfo.textContent += title;
+}, 2000);
+</script>
+
+<button onclick="applyStyles()">Применить стили</button>
+
+<script>
+function applyStyles() {
+    var element = document.getElementById('element1');
+    element.style.color = 'red';
+    element.style.backgroundColor = 'blue';
+    element.style.border = '1px solid green';
+}
+</script>
+
+<button onclick="showUserInfo()">Показать информацию</button>
+
+<script>
+function showUserInfo() {
+    var osInfo = navigator.platform;
+    var browserInfo = navigator.userAgent;
+
+    var userInfo = "Операционная система: " + osInfo + "\nБраузер: " + browserInfo;
+
+    var userInfoWindow = window.open("", "_blank");
+    userInfoWindow.document.write("<pre>" + userInfo + "</pre>");
+
+    setTimeout(function() {
+        userInfoWindow.close();
+    }, 5000);
+}
+</script>
+
+ 
+
+
+
+<div class="container">
+    <h2>Форма Регистрации</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="fullname">ФИО:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="confirmEmail">Повторите E-mail:</label>
+        <input type="email" id="confirmEmail" name="confirmEmail" required>
+
+        <label for="password">Пароль (от 6 до 12 символов):</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Повторите Пароль:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    <div id="error-message" class="error"></div>
+</div>
+
+<script>
+    function validateForm() {
+        let fullname = document.getElementById('fullname').value;
+        let email = document.getElementById('email').value;
+        let confirmEmail = document.getElementById('confirmEmail').value;
+        let password = document.getElementById('password').value;
+        let confirmPassword = document.getElementById('confirmPassword').value;
+        let errorMessage = '';
+
+        if (/\d/.test(fullname)) {
+            errorMessage += 'ФИО не должно содержать цифры\n';
+        }
+
+        if (email !== confirmEmail) {
+            errorMessage += 'E-mail и его повтор не совпадают\n';
+        }
+
+        if (password.length < 6 || password.length > 12) {
+            errorMessage += 'Пароль должен быть от 6 до 12 символов\n';
+        }
+
+        if (password !== confirmPassword) {
+            errorMessage += 'Пароль и его повтор не совпадают\n';
+        }
+
+        if (errorMessage !== '') {
+            document.getElementById('error-message').innerText = errorMessage;
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</body>
+</html>

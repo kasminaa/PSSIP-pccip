@@ -1,0 +1,5 @@
+h1 {
+    text-decoration: underline; /* Подчеркивание текста */
+    color: red; /* Цвет текста красный */
+    text-align: justify; /* Выравнивание по ширине */
+}

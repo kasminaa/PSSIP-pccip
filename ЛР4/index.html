@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ваше имя или название компании">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+    <style> 
+        h3 {color: rgb(41, 221, 143);font-weight:normal;}
+        h2 { 
+         color: rgb(198, 16, 158);
+         border-bottom: 2px solid black; 
+         text-align: center;
+        }
+        body {
+            background-color: rgba(255, 236, 90, 0.779);
+        }
+        li {
+            color:brown;
+            font-size: x-large;
+        }
+        .blue-wave{
+            text-decoration-style: wavy;
+            text-decoration-color: blue;
+            text-decoration-line: overline;
+        }
+
+        #red-dots {
+            text-decoration-style: dotted;
+            text-decoration-color: red;
+            text-decoration-line: underline;
+        }
+        .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    background-color: #dd1d1d;
+}
+
+td:nth-child(odd) {
+    background-color: #ffacac;
+}
+
+td:nth-child(even) {
+    background-color: #6bfaff;
+}
+
+       </style>
+</head>
+<body>
+    <header>
+        <h1 style="color:rgb(198, 16, 158);">Заголовок сайта</h1>
+        <div style="width: 100px; height: 100px; background-color: rgb(41, 221, 143);"></div>
+    </header>
+    <h2 class="blue-wave">Мое портфолио</h2>
+    
+    <h2 id="red-dots">Обо мне</h2>
+    <p><b>Привет! Я Даша Касмина, танцор, таргетолог и просто добрый человек.</b></p>
+    <p class="blue-wave"><b>Политехнический</b> <i>колледж</i> <u>самый</u> <b><i><u>лучший!!!</u></i></b></p>
+
+
+    <h2><i>Мои навыки</i></h2>
+    <ul> 
+
+        <li>HTML</li>
+        <li>таргет</li>
+        <li>танцы</li>
+        <li>готовка</li>
+
+    </ul>
+    
+    <h2><u>Мое хобби</u></h2>
+    <ul>
+        <li>Фотография</li>
+        <li>Путешествия</li>
+        <li>Чтение</li>
+    </ul>
+
+    <h2>Мои любимые предметы в колледже:</h2>
+    
+    <ol>
+        <li>ПССИП</li>
+        <li>КП и ЯП</li>
+        <li>БД и СУБД</li>
+    </ol>
+    
+    <h3>Любимые языки программирования и технологии</h3>
+    <ul>
+        <li>Python</li>
+        <li>React</li>
+        <li>Node.js</li>
+    </ul>
+    <div class="circle">
+        <img src="photo.jpg" alt="Мое фото" width="200">
+    </div>
+
+    <h2>Пример перечеркнутого текста</h2>
+    <p>Этот текст <del>перечеркнутый</del>.</p>
+    
+    <h5>Таблица с объединением ячеек</h5>
+    
+    <table border="1">
+        <tr>
+            <th>Заголовок 1</th>
+            <th>Заголовок 2</th>
+            <th>Заголовок 3</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Ячейка 1</td>
+            <td colspan="2">Ячейка 2</td>
+        </tr>
+        <tr>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+        </tr>
+    </table>
+    <div class="form-container">
+    <h2>Регистрация</h2>
+<form action="/register" method="post" id="registrationForm">
+    <label for="fullname">Полное имя:</label>
+    <input type="text" id="fullname" name="fullname"><br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password"><br><br>
+    
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone"><br><br>
+    
+    <label for="birthdate">Дата рождения:</label>
+    <input type="date" id="birthdate" name="birthdate"><br><br>
+
+    <label for="memo"> Ваши пожелания:</label>
+    <textarea id="memo" name="memo"></textarea><br><br>
+    
+    <label for="address">Адрес:</label>
+    <input type="text" id="address" name="address"><br><br>
+    
+    <label for="gender">Пол:</label>
+    <select id="gender" name="gender">
+        <option value="male">Мужской</option>
+        <option value="female">Женский</option>
+        <option value="other">Другой</option>
+    </select><br><br>
+    
+    <input type="checkbox" id="subscribe" name="subscribe">
+    <label for="subscribe">Подписаться на рассылку</label><br><br>
+    
+    <label>Выберите ваш статус:</label><br>
+    <input type="radio" id="student" name="status" value="student">
+    <label for="student">Студент</label><br>
+    <input type="radio" id="employee" name="status" value="employee">
+    <label for="employee">Сотрудник</label><br><br>
+    
+    <button type="submit">Зарегистрироваться</button>
+    <button type="button" onclick="document.getElementById('registrationForm').reset()">Очистить форму</button>
+</form>
+</div>
+    <h3>Мои ссылки</h3>
+    
+    <ul>
+        <li><a href="https://github.com/kasminaa" target="_blank">Мой профиль GitHub</a></li>
+        <li><a href="https://www.instagram.com/d.kasmina_/" target="_blank">Мой Инстаграм</a></li>
+    </ul>
+
+    <h2>2 страница сайта</h2>
+    <a href="page2.html">Перейти на вторую страницу</a>
+
+    <h2> Видео </h2>
+    <video width="320" height="240" controls>
+        <source src="огонь.mp4" type="video/mp4">
+        Ваш браузер не поддерживает тег video.
+      </video>
+
+      <h2> Песня </h2>
+      <audio controls>
+        <source src="сдр.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает тег audio.
+      </audio>
+
+      <h2>Спецсимволы</h2>
+      <p>Знак копирайта: &copy;</p>
+      <p>Торговая марка: &trade;</p>
+      <p>Символ градуса: &deg;</p>
+      <p>Большое тире: &mdash;</p>
+
+      <a href="#top">Наверх</a>
+
+      <h2>Опрос: Вам нравится этот сайт?</h2>
+    <form>
+        <p>Выберите один вариант ответа:</p>
+        <input type="radio" id="option1" name="answer" value="option1">
+        <label for="option1">Отлично</label><br>
+        
+        <input type="radio" id="option2" name="answer" value="option2">
+        <label for="option2">Хорошо</label><br>
+        
+        <input type="radio" id="option3" name="answer" value="option3">
+        <label for="option3">Удовлетворительно</label><br>
+        
+        <input type="radio" id="option4" name="answer" value="option4">
+        <label for="option4">Плохо</label><br><br>
+        
+        <button type="submit">Отправить ответ</button>
+    </form>
+
+</body>
+</html>
